@@ -462,12 +462,65 @@ $Additional Dark Brown: #474328;
 }
 
 /* ADDITIONAL CSS */
+
+/* ALL PAGES */
+body,
+html {
+  font-size: 17x;
+}
+
 /* @media (max-width: 767px) {
   body,
   html {
     font-size: 17px !important;
   }
 } */
+
+body,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Montserrat, sans-serif;
+}
+
+h1,
+h2,
+h3,
+.h1,
+.h2,
+.h3 {
+  margin-top: 11px;
+  margin-bottom: 11px;
+}
+
+h4,
+h5,
+h6,
+.h4,
+.h5,
+.h6 {
+  margin-bottom: 11px;
+}
+
+a {
+  color: #0c101db9;
+}
+
+a:active,
+a:focus,
+a:hover {
+  color: #1a8c94;
+}
 
 .text-link:hover {
   opacity: 0.7;
@@ -481,6 +534,18 @@ $Additional Dark Brown: #474328;
 .content-header > .container > .breadcrumb > li .glyphicon,
 .content-header > .container > .breadcrumb > li .ion {
   margin-right: 5px;
+}
+
+[type="checkbox"] + label:hover:before,
+[type="checkbox"]:not(.filled-in) + label:hover:after {
+  border-color: #59c3c3;
+}
+
+[type="checkbox"]:checked + label:before {
+  border-top: 2px solid transparent;
+  border-left: 2px solid transparent;
+  border-right: 2px solid #e3170a;
+  border-bottom: 2px solid #e3170a;
 }
 
 .carousel-indicators li {
@@ -514,6 +579,11 @@ $Additional Dark Brown: #474328;
   display: inline-block;
 }
 
+body,
+.main-footer {
+  background-color: #ffffff;
+  color: #242a33;
+}
 .main-footer {
   border-top: solid 1px #f4ffec;
   color: #474328;
@@ -546,6 +616,16 @@ $Additional Dark Brown: #474328;
 
 .table a {
   text-decoration: none;
+}
+
+table col[class*="col-"] {
+  position: static;
+
+  display: table-column;
+  float: none;
+}
+
+.skin-black .content-header {
 }
 
 .content-wrapper,
@@ -644,6 +724,14 @@ $Additional Dark Brown: #474328;
 
 .cursor-default {
   cursor: default;
+}
+
+[data-tooltip-content] {
+  color: #6e6841 !important;
+}
+[data-tooltip-content]:hover {
+  color: #4daa57 !important;
+  cursor: default !important;
 }
 
 .tooltip,
@@ -1017,7 +1105,8 @@ textarea.no-label::placeholder,
   padding-top: 1.4rem;
 }
 
-.-header .modal-title {
+.
+-header .modal-title {
   font-size: 1.4rem;
 }
 
@@ -2484,6 +2573,11 @@ table.dataTable tr.selected th.select-checkbox:after {
   text-align: center;
 }
 
+div.form-group strong,
+h6 {
+  color: red;
+}
+
 .form-list-inputs {
   margin-bottom: 1.429rem;
 }
@@ -3662,4 +3756,3 @@ table.dataTable tr.selected th.select-checkbox:after {
     display: inline-block;
     max-width:fit-content;
   }
-}

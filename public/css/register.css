@@ -60,7 +60,7 @@ p {
 .text-link:hover {
     opacity: 0.8;
     transition: all 0.3s;
-}
+  }
 
 .text-link {
     text-decoration: none;
