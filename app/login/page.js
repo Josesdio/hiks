@@ -117,7 +117,7 @@ export default function Home() {
                 <div className={styles['col-6']}>
                   <div className={`${cstyles['fog-pwd']} ${styles['text-right']}`}>
                     <a
-                      href="http://app.mimin.io/forgot-password"
+                      href="/forgot"
                       className={cstyles['text-link']}
                     >
                       <i className={`ion ion-locked ${styles['pr-1']}`} />
