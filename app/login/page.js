@@ -7,17 +7,41 @@ import bstyles from './page.module.css'
 import exstyles from './bootstrap-extend.module.css'
 import cstyles from './styleBaru.module.css'
 import ionstyle from './ionicons.module.css'
+import $ from "jquery";
 import bootstrap from '/public/plugin/assets/bootstrap-4.3.1/css/bootstrap.css'
 import masterStyle from '/public/plugin/minimallite/minimallite-admin-main/css/master_style.css'
 
 export default function Home() {
+
   useEffect(() => {
-    const init = async () => {
+  const init = async () => {
     const { Carousel, initTWE } = await import("tw-elements");
     initTWE({ Carousel });
-    };
-    init();
+
+    // Binding toggle-password click event
+    $(".toggle-password").click(function() {
+      $(this).toggleClass("ion-eye ion-eye");
+      const input = $($(this).attr("toggle"));
+      if (input.attr("type") == "password") {
+        input.attr("type", "text");
+      } else {
+        input.attr("type", "password");
+      }
+    });
+
+    // Checking for session errors and showing Swal
+    if (sessionStorage.getItem('errors')) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Login Failed',
+        text: sessionStorage.getItem('errors'),
+      });
+      $('.invalid-feedback').show();
+    }
+  };
+  init();
 }, []);
+
 
   return (
     <body style={{ background: 'url(plugin/assets/images/backgrounds/1.jpg) center center' }}>
@@ -186,7 +210,6 @@ export default function Home() {
       aria-label="Slide 3"></button>
   </div>
   
-
     <div id="carouselExampleSlidesOnly" className="relative" data-twe-carousel-init data-twe-ride="carousel">
     {/*carousel-items*/}
     <div className="relative w-full overflow-hidden after:clear-both after:block after:content-['']">
